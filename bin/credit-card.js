@@ -28,5 +28,6 @@ commandRead.on('line', (line) => {
 // TODO: Print out data here, sorted alphabetically
 commandRead.on('close', () => {
   console.log('End of input')
+  console.log(data)
 })
 
