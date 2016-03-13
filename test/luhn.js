@@ -1,5 +1,5 @@
 var expect = require('chai').expect
-var luhn = require('../src/luhn.js')
+var luhn = require('../lib/luhn.js')
 
 describe('Luhn', function () {
   it('should validate a correct card number', function () {

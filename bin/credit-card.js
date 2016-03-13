@@ -3,7 +3,7 @@
 
 const readline = require('readline')
 const fs = require('fs')
-const parser = require('../src/parser.js')
+const parser = require('../lib/parser.js')
 
 // Handle multiple input types: File Argument || STDIN
 // Assume STDIN unless argument provided

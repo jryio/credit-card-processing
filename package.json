@@ -5,13 +5,17 @@
   "main": "index.js",
   "dependencies": {
     "chai": "^3.5.0",
-    "mocha": "^2.4.5"
+    "mocha": "^2.4.5",
+    "mock-stdin": "^0.3.0"
   },
   "standard": {
-    "globals": [ "describe", "it" ]
+    "globals": [
+      "describe",
+      "it"
+    ]
   },
   "scripts": {
-    "test": "\"echo \\\"Error: no test specified\\\" && exit 1\""
+    "test": "mocha --require test/environment/index test/" 
   },
   "bin": {
     "credit-card": "./bin/credit-card.js"
