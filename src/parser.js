@@ -15,5 +15,3 @@ module.exports = (line) => {
   // TODO: Should call to other functions to handle command name etc.
 }
 
-// TODO: Write functions here
-
