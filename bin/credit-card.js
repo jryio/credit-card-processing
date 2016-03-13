@@ -5,6 +5,7 @@ const readline = require('readline')
 const fs = require('fs')
 const parser = require('../lib/parser.js')
 let data = []
+
 // Handle multiple input types: File Argument || STDIN
 // Assume STDIN unless argument provided
 const args = process.argv.slice(2)
@@ -19,6 +20,7 @@ if (args.length === 1) {
   process.exit()
 }
 
+// Read input from File or STDIN, parse each line
 const commandRead = readline.createInterface(rlInterface)
 
 commandRead.on('line', (line) => {
