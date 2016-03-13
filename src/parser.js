@@ -1,3 +1,5 @@
+'use strict'
+
 /* Valid input assumed (from specification)
 * - Space delimited
 * - Contains only legal characters
@@ -9,4 +11,9 @@ module.exports = (line) => {
   // Split on spaces
   const commandArgs = line.split(' ')
   console.log(commandArgs)
+
+  // TODO: Should call to other functions to handle command name etc.
 }
+
+// TODO: Write functions here
+
