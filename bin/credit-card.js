@@ -4,7 +4,7 @@
 const readline = require('readline')
 const fs = require('fs')
 const parser = require('../lib/parser.js')
-
+let data = []
 // Handle multiple input types: File Argument || STDIN
 // Assume STDIN unless argument provided
 const args = process.argv.slice(2)
@@ -21,5 +21,12 @@ if (args.length === 1) {
 
 const commandRead = readline.createInterface(rlInterface)
 
-commandRead.on('line', parser)
+commandRead.on('line', (line) => {
+  parser(line, data)
+})
+
+// TODO: Print out data here, sorted alphabetically
+commandRead.on('close', () => {
+  console.log('End of input')
+})
 

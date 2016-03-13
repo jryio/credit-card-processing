@@ -1,7 +1,7 @@
 var expect = require('chai').expect
 var luhn = require('../lib/luhn.js')
 
-describe('Luhn', function () {
+describe('Luhn Check Algorithm', function () {
   it('should validate a correct card number', function () {
     expect(luhn.validate('4111111111111111')).to.be.true
   })
@@ -10,7 +10,7 @@ describe('Luhn', function () {
     expect(luhn.validate('08723487802734')).to.be.false
   })
 
-  it('should reject valid card numbers over 19 digits', function () {
+  it('should validate correct card numbers over 19 digits', function () {
     expect(luhn.validate('401288888888188134267')).to.be.false
   })
 
