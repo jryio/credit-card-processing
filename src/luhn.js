@@ -1,10 +1,9 @@
 'use strict'
 
-module.exports = (cardNumber) => {
-  return validate(cardNumber)
-}
-
-const validate = (cardNumber) => {
+module.exports.validate = (cardNumber) => {
+  if (cardNumber.length > 19) {
+    return false
+  }
   const digits = parseDigits(cardNumber)
   let evens = digits.filter((el, i) => { return (i % 2) })
   let odds = digits.filter((el, i) => { return !(i % 2) })
