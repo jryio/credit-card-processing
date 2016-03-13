@@ -1,15 +1,15 @@
 #! /usr/bin/env node
 'use strict'
-console.log('Executable working')
 
 const readline = require('readline')
 const fs = require('fs')
+const parser = require('../src/parser.js')
 
 // Handle multiple input types: File Argument || STDIN
+// Assume STDIN unless argument provided
 const args = process.argv.slice(2)
 let rlInterface = {
-  input: process.stdin,
-  output: process.stdout
+  input: process.stdin
 }
 if (args.length === 1) {
   const inputFile = args[0]
@@ -20,4 +20,6 @@ if (args.length === 1) {
 }
 
 const commandRead = readline.createInterface(rlInterface)
+
+commandRead.on('line', parser)
 
