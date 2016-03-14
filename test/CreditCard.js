@@ -3,18 +3,35 @@ var CreditCard = require('../lib/CreditCard.js')
 
 describe('CreditCard Class', function () {
   describe('constructor', function () {
-    it('should initialize object with given arguments', function () {
-      var name = 'Benjamin'
-      var cardNumber = '6011000990139424'
-      var limit = 1000
-      var testCard = new CreditCard(name, cardNumber, limit)
+    it('should return instance of CreditCard', function () {
+      var testCard = new CreditCard()
+      expect(testCard).is.instanceOf(CreditCard)
+    })
 
-      expect(testCard).to.be.an.instanceOf(CreditCard)
-      expect(testCard).to.have.property('name', name)
-      expect(testCard).to.have.property('cardNumber', cardNumber)
-      expect(testCard).to.have.property('limit', limit)
+    it('should initialize \'name\' property', function () {
+      var testCard = new CreditCard('Morgan')
+      expect(testCard).to.have.property('name').that.is.a('string')
+    })
+
+    it('should initialize \'cardNumber\' property', function () {
+      var testCard = new CreditCard('', '123')
+      expect(testCard).to.have.property('cardNumber').that.is.a('string')
+    })
+
+    it('should initialize \'limit\' property', function () {
+      var testCard = new CreditCard('', '', 9001)
+      expect(testCard).to.have.property('limit').that.is.a('number')
+    })
+
+    it('should initialize \'balance\' property and set to $0', function () {
+      var testCard = new CreditCard()
+      expect(testCard).to.have.property('balance').that.is.a('number')
       expect(testCard).to.have.property('balance', 0)
-      expect(testCard).to.have.property('isValidCardNum')
+    })
+
+    it('should initialize \'isValidCardNum\' property', function () {
+      var testCard = new CreditCard('', '12345')
+      expect(testCard).to.have.property('isValidCardNum').that.is.a('boolean')
     })
   })
 

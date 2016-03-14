@@ -27,12 +27,12 @@ describe('Commands', function () {
 
     var addToBalance = Math.floor(Math.random() * limit)
 
-    it('should increase the balance of the card by ' + addToBalance, function () {
+    it('should increase the balance of the card by $' + addToBalance, function () {
       commands.charge(testData[0].name, addToBalance, testData)
       expect(testData[0].balance).to.equal(addToBalance)
     })
 
-    it('should ignore charges exceeding card limit of ' + limit, function () {
+    it('should ignore charges exceeding card limit of $' + limit, function () {
       var currentBalance = testData[0].balance
       var exceedBalance = limit * Math.floor(Math.random() * 10 + 1)
 
@@ -59,14 +59,14 @@ describe('Commands', function () {
 
     var removeFromBalance = Math.floor(Math.random() * limit / 100)
 
-    it('should decrease the balance of a card by ' + removeFromBalance, function () {
+    it('should decrease the balance of a card by $' + removeFromBalance, function () {
       var currentBalance = testData[0].balance
 
       commands.credit(testData[0].name, removeFromBalance, testData)
       expect(testData[0].balance).to.equal(currentBalance - removeFromBalance)
     })
 
-    it('should allow the balance to become negative', function () {
+    it('should allow the balance to be negative', function () {
       var currentBalance = testData[0].balance
       var negativeBalance = Math.floor(Math.random() * limit / 10)
 
