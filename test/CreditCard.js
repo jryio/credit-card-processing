@@ -23,9 +23,14 @@ describe('CreditCard Class', function () {
       expect(testCard).to.have.property('limit').that.is.a('number')
     })
 
-    it('should initialize \'balance\' property and set to $0', function () {
+    it('should initialize \'balance\' property', function () {
       var testCard = new CreditCard()
       expect(testCard).to.have.property('balance').that.is.a('number')
+      expect(testCard).to.have.property('balance', 0)
+    })
+
+    it('should set \'balance\' to $0', function () {
+      var testCard = new CreditCard()
       expect(testCard).to.have.property('balance', 0)
     })
 
