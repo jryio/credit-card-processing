@@ -4,6 +4,8 @@
 const readline = require('readline')
 const fs = require('fs')
 const parser = require('../lib/parser.js')
+
+// In-memory Array for simplicity
 let data = []
 
 // Handle multiple input types: File Argument || STDIN
@@ -20,16 +22,24 @@ if (args.length === 1) {
   process.exit()
 }
 
-// Read input from File or STDIN, parse each line
 const commandRead = readline.createInterface(rlInterface)
-
+// Send input to parser. Parser issues 'commands'
 commandRead.on('line', (line) => {
   parser(line, data)
 })
 
-// TODO: Print out data here, sorted alphabetically
+// Print final data.
+// Each line is the final state of each credit card
 commandRead.on('close', () => {
-  console.log('End of input')
-  console.log(data)
+  data.sort(sortAlphabetically)
+  data.forEach((card) => {
+    console.log(`${card.name}: ${(card.isValidCardNum ? ('$' + card.balance) : 'error')}`)
+  })
 })
+
+const sortAlphabetically = (a, b) => {
+  if (a.name < b.name) return -1
+  if (a.name > b.name) return 1
+  return 0
+}
 
