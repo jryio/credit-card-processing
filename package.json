@@ -2,11 +2,9 @@
   "name": "credit-card-processing",
   "version": "0.0.1",
   "description": "Node.js Credit Card Processing CLI",
-  "main": "index.js",
   "dependencies": {
     "chai": "^3.5.0",
-    "mocha": "^2.4.5",
-    "mock-stdin": "^0.3.0"
+    "mocha": "^2.4.5"
   },
   "standard": {
     "globals": [
@@ -15,7 +13,7 @@
     ]
   },
   "scripts": {
-    "test": "mocha --require test/environment/index test/" 
+    "test": "mocha test/" 
   },
   "bin": {
     "credit-card": "./bin/credit-card.js"
