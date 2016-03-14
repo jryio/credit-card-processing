@@ -1,7 +1,7 @@
 var expect = require('chai').expect
 var CreditCard = require('../lib/CreditCard.js')
 
-describe('Credit Card Class', function () {
+describe('CreditCard Class', function () {
   describe('constructor', function () {
     it('should initialize object with given arguments', function () {
       var name = 'Benjamin'
@@ -51,7 +51,7 @@ describe('Credit Card Class', function () {
 
   describe('set balance()', function () {
     var testCard = new CreditCard('Testing', '6011000990139424', 0)
-    it('should should add value to balance', function () {
+    it('should add value to balance', function () {
       var balance = testCard.balance
       testCard.balance += 15
       expect(testCard.balance).to.equal(balance + 15)
@@ -66,7 +66,7 @@ describe('Credit Card Class', function () {
 
   describe('get isValidCardNum()', function () {
     var testCard = new CreditCard('Testing', '6011000990139424', 0)
-    it('shoud return a boolean from luhn.validate()', function () {
+    it('should return a boolean from luhn.validate()', function () {
       expect(testCard.isValidCardNum).to.be.a('boolean')
     })
   })

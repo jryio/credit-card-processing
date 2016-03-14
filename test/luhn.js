@@ -17,5 +17,9 @@ describe('Luhn Check Algorithm', function () {
   it('should reject invalid card numbers over 19 digits', function () {
     expect(luhn.validate('78327048728736475082048720')).to.be.false
   })
+
+  it('should reject an empty string as card number', function () {
+    expect(luhn.validate('')).to.be.false
+  })
 })
 
