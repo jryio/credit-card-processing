@@ -39,7 +39,7 @@ npm test
 
 For this project I chose Node.js as an opportunity to explore running command line style applications. Previously I've utilized Node.js for creating web servers and RESTful APIs using express.
 
-For this project I would have been equally comfortable using Python or Bash, however I saw the opportunity to learn about Node and the command line, as well as JavaScript testing.
+I would have been equally comfortable using Python or Bash, however I saw the opportunity to learn about Node and the command line, as well as JavaScript testing.
 
 
 #### Architecture
